@@ -7,7 +7,7 @@ src_dir="~/Documents/GitHub/portfolio/dist/portfolio"
 dest_dir="./docs"
 
 # Copy files recursively
-cp -r "$src_dir"/* "$dest_dir"
+cp -r "$src_dir"* "$dest_dir"
 
 # Stage all changes (optional, customize if needed)
 git add .
