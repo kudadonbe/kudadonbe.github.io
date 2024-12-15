@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Source directory (replace with your actual path)
-src_dir="~/Documents/GitHub/portfolio/dist/portfolio"
+src_dir="/Users/kudadonbe/Documents/GitHub/portfolio/dist/portfolio"
 
 # Destination directory (replace with the relative path)
 dest_dir="./docs"
 
 # Copy files recursively
-cp -r "$src_dir"* "$dest_dir"
+cp -r "$src_dir"/* "$dest_dir"
 
 # Stage all changes (optional, customize if needed)
 git add .
