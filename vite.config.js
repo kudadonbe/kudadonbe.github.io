@@ -27,5 +27,5 @@ export default defineConfig({
     outDir: 'docs',
     emptyOutDir: true
   },
-  base: './'
+  base: '/' // GitHub Pages user site (kudadonbe.github.io)
 })

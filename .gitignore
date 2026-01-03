@@ -28,8 +28,10 @@ dist-ssr
 .env.local
 .env.*.local
 
-# Build output (we keep docs/ as it's used for GitHub Pages deployment)
-# docs/
+# Build output (GitHub Actions will build and deploy)
+docs/
+dist/
+dist-ssr/
 
 # OS files
 Thumbs.db
