@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode (triggered by .dark class on html) */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+}
+
 @layer base {
   body {
     min-height: 100vh;
@@ -9,11 +25,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  @media (prefers-color-scheme: dark) {
-    body.dark {
-      background-color: rgb(17 24 39);
-      color: rgb(243 244 246);
-    }
+  .dark body {
+    background-color: rgb(17 24 39);
+    color: rgb(243 244 246);
   }
 
   #app {

@@ -1,20 +1,20 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
+import router from './router'
 import './style.css'
-import { useLanguageStore, useThemeStore, usePreferencesStore } from './stores'
+import { useThemeStore, usePreferencesStore } from './stores'
 
 const app = createApp(App)
 const pinia = createPinia()
 
 app.use(pinia)
+app.use(router)
 
-// Initialize stores
-const languageStore = useLanguageStore()
+// Initialize stores (language is now synced via router)
 const themeStore = useThemeStore()
 const preferencesStore = usePreferencesStore()
 
-languageStore.initLanguage()
 themeStore.initTheme()
 preferencesStore.initPreferences()
 

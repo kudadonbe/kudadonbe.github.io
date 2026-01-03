@@ -4,9 +4,9 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo/Brand -->
         <div class="flex-shrink-0">
-          <a href="#" class="text-xl font-bold text-gray-900 dark:text-white">
+          <router-link :to="'/' + currentLang" class="text-xl font-bold text-gray-900 dark:text-white">
             kudadonbe
-          </a>
+          </router-link>
         </div>
 
         <!-- Desktop Navigation -->
@@ -26,10 +26,16 @@
           </div>
         </div>
 
+        <!-- Mobile: Language + Theme -->
+        <div class="flex md:hidden items-center gap-2">
+          <LanguageSwitcher />
+          <ThemeToggle />
+        </div>
+
         <!-- Mobile Menu Button -->
         <button
           @click="mobileMenuOpen = !mobileMenuOpen"
-          class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 ms-2"
           :aria-label="mobileMenuOpen ? 'Close menu' : 'Open menu'"
           :aria-expanded="mobileMenuOpen"
         >
@@ -72,11 +78,6 @@
           >
             {{ t.nav[link.key] || link.label }}
           </a>
-
-          <div class="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-800">
-            <LanguageSwitcher />
-            <ThemeToggle />
-          </div>
         </div>
       </div>
     </div>
@@ -91,7 +92,7 @@ import LanguageSwitcher from './LanguageSwitcher.vue'
 import ThemeToggle from './ThemeToggle.vue'
 
 const languageStore = useLanguageStore()
-const { t } = storeToRefs(languageStore)
+const { t, currentLang } = storeToRefs(languageStore)
 
 const mobileMenuOpen = ref(false)
 
